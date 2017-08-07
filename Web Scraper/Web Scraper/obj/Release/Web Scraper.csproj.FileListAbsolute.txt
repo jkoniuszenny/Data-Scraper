@@ -1,7 +1,6 @@
 C:\Users\IT KON\Documents\GitHub\Data-Scraper\Web Scraper\Web Scraper\bin\Release\Web Scraper.exe.config
 C:\Users\IT KON\Documents\GitHub\Data-Scraper\Web Scraper\Web Scraper\bin\Release\Web Scraper.exe
 C:\Users\IT KON\Documents\GitHub\Data-Scraper\Web Scraper\Web Scraper\bin\Release\Web Scraper.pdb
-C:\Users\IT KON\Documents\GitHub\Data-Scraper\Web Scraper\Web Scraper\obj\Release\Web Scraper.csprojResolveAssemblyReference.cache
 C:\Users\IT KON\Documents\GitHub\Data-Scraper\Web Scraper\Web Scraper\obj\Release\MainWindow.g.cs
 C:\Users\IT KON\Documents\GitHub\Data-Scraper\Web Scraper\Web Scraper\obj\Release\App.g.cs
 C:\Users\IT KON\Documents\GitHub\Data-Scraper\Web Scraper\Web Scraper\obj\Release\Web Scraper_MarkupCompile.cache
@@ -12,3 +11,4 @@ C:\Users\IT KON\Documents\GitHub\Data-Scraper\Web Scraper\Web Scraper\obj\Releas
 C:\Users\IT KON\Documents\GitHub\Data-Scraper\Web Scraper\Web Scraper\obj\Release\Web Scraper.csproj.GenerateResource.Cache
 C:\Users\IT KON\Documents\GitHub\Data-Scraper\Web Scraper\Web Scraper\obj\Release\Web Scraper.exe
 C:\Users\IT KON\Documents\GitHub\Data-Scraper\Web Scraper\Web Scraper\obj\Release\Web Scraper.pdb
+C:\Users\IT KON\Documents\GitHub\Data-Scraper\Web Scraper\Web Scraper\obj\Release\Web Scraper.csprojResolveAssemblyReference.cache
