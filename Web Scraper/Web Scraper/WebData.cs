@@ -42,9 +42,9 @@ namespace Web_Scraper
         //Method to read HTML source
         public DataView readHTML()
         {
+            DataSet dataSet = new DataSet();
             try
             {
-                DataSet dataSet = new DataSet();
                 dataSet.ReadXml(wwwAddress);
                 dataView = new DataView(dataSet.Tables[1]);
             }
@@ -53,6 +53,34 @@ namespace Web_Scraper
                 MessageBox.Show(e.Message);
             }
             return dataView;
+        }
+
+        public string getXmlName(string date, string letter)
+        {
+            try
+             {
+                WebClient client = new WebClient();
+                Stream stream = client.OpenRead("http://www.nbp.pl/kursy/xml/dir.txt");
+
+                date = date.Replace("-", "").Remove(0,2);
+                using (StreamReader sr = new StreamReader(stream))
+                {
+                    String line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        if (line.Contains(date))
+                        {
+                            return letter.ToLower().Substring(letter.Length-1,1)+line.Remove(0,1);
+                            break;
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+               MessageBox.Show(e.Message);
+            }
+            return "";
         }
 
     }

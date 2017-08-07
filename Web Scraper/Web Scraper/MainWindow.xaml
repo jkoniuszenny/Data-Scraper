@@ -13,15 +13,15 @@
         <Button x:Name="exportExcel" Content="Export Excel file" HorizontalAlignment="Left" Margin="381,276,0,0" VerticalAlignment="Top" Width="103" RenderTransformOrigin="-0.08,0"/>
         <Button x:Name="collectData" Content="Start scraping" HorizontalAlignment="Left" Margin="32,276,0,0" VerticalAlignment="Top" Width="103" RenderTransformOrigin="-0.08,0" Click="startScraping_Click"/>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="32,98,0,0" VerticalAlignment="Top" Height="162" Width="452"/>
-        <Canvas Margin="102,28,103,242">
+        <Canvas Margin="110,27,111,243">
             <DatePicker x:Name="dataPic" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="25" FirstDayOfWeek="Monday" SelectedDateFormat="Short"/>
-            <ComboBox x:Name="tableList" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Canvas.Left="191" Canvas.Top="25">
-                <ComboBoxItem Content="Tabela A" HorizontalAlignment="Left" Width="118"/>
-                <ComboBoxItem Content="Tabela B" HorizontalAlignment="Left" Width="118"/>
-                <ComboBoxItem Content="Tabela C" HorizontalAlignment="Left" Width="118"/>
-            </ComboBox>
             <Label x:Name="label" Content="Wybierz datę" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="11"/>
-            <Label x:Name="label1" Content="Rodzaj tabeli" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="212"/>
+            <Label x:Name="label1" Content="Wybierz tabelę" Canvas.Left="191"/>
+            <ComboBox x:Name="tableList" Canvas.Left="176" Canvas.Top="25" Width="120">
+                <ComboBoxItem Content="Tabela A" HorizontalAlignment="Left" Width="118"/>
+                <ComboBoxItem Content="Tabela C" HorizontalAlignment="Left" Width="118"/>
+                <ComboBoxItem Content="Tabela H" HorizontalAlignment="Left" Width="118" RenderTransformOrigin="0.508,2.7"/>
+            </ComboBox>
         </Canvas>
     </Grid>
 </Window>

@@ -31,11 +31,12 @@ namespace Web_Scraper
 
         private void startScraping_Click(object sender, RoutedEventArgs e)
         {
-            string table = tableList.Text.Substring(tableList.Text.Length - 1, 1);
-            ws.setAddress("http://api.nbp.pl/api/exchangerates/tables/"+ table + "/"+ dataPic.Text + "/");
+            string xmlName = ws.getXmlName(dataPic.Text, tableList.Text);
 
+            ws.setAddress("http://www.nbp.pl/kursy/xml/"+xmlName+".xml");
             dataGrid.ItemsSource = ws.readHTML();
-            dataGrid.Columns.RemoveAt(4);
+
+            dataGrid.Columns.RemoveAt(dataGrid.Columns.Count-1);
         }
 
         private void webAddress_TextChanged(object sender, TextChangedEventArgs e)
