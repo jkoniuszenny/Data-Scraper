@@ -5,6 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Web_Scraper"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid/>
+        Title="Web Scraper" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="84*"/>
+            <ColumnDefinition Width="433*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="wwwLabel" Content="WWW:" HorizontalAlignment="Left" Margin="32,26,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.873,-1.263"/>
+        <TextBox x:Name="webAddress" HorizontalAlignment="Left" Height="22" Margin="12,30,0,0" TextWrapping="Wrap" Text="Type web address" VerticalAlignment="Top" Width="388" Grid.Column="1"/>
+        <Label x:Name="tagsLabel" Content="Tags:" Margin="32,57,6,0" VerticalAlignment="Top" RenderTransformOrigin="-0.873,-1.263"/>
+        <TextBox x:Name="tags" HorizontalAlignment="Right" Height="22" Margin="0,61,33,0" TextWrapping="Wrap" Text="Type tags here" VerticalAlignment="Top" Width="388" Grid.Column="1"/>
+        <TextBox x:Name="codeBlox" HorizontalAlignment="Left" Height="173" Margin="32,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="452" Grid.ColumnSpan="2"/>
+        <Button x:Name="exportExcel" Content="Export Excel file" HorizontalAlignment="Left" Margin="297,276,0,0" VerticalAlignment="Top" Width="103" RenderTransformOrigin="-0.08,0" Grid.Column="1"/>
+        <Button x:Name="collectData" Content="Start scraping" HorizontalAlignment="Left" Margin="32,276,0,0" VerticalAlignment="Top" Width="103" RenderTransformOrigin="-0.08,0" Grid.ColumnSpan="2"/>
+    </Grid>
 </Window>
