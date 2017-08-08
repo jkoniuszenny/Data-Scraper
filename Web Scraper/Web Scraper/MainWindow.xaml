@@ -5,15 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Web_Scraper"
         mc:Ignorable="d"
-        Title="NPB Currency Scraper" Height="400" Width="680">
-    <Grid Margin="0,0,0,-21">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Button x:Name="exportExcel" Content="Export Excel file" HorizontalAlignment="Left" Margin="537,337,0,0" VerticalAlignment="Top" Width="103" RenderTransformOrigin="-0.08,0"/>
-        <Button x:Name="collectData" Content="Start scraping" HorizontalAlignment="Left" Margin="32,337,0,0" VerticalAlignment="Top" Width="103" RenderTransformOrigin="-0.08,0" Click="startScraping_Click" Height="20" Background="#FFDDDDDD"/>
+        Title="NPB Currency Scraper" Height="415" Width="680">
+    <Grid Height="400" VerticalAlignment="Top" Margin="0,0,0,0">
+        <Button x:Name="exportExcel" Content="Export Excel file" Margin="0,0,32,36" RenderTransformOrigin="-0.08,0" HorizontalAlignment="Right" Width="103" Height="30" VerticalAlignment="Bottom" Click="exportExcel_Click"/>
+        <Button x:Name="collectData" Content="Start scraping" Margin="32,334,0,0" RenderTransformOrigin="-0.08,0" Click="startScraping_Click" Background="#FFDDDDDD" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="103"/>
         <DataGrid x:Name="dataGrid" Margin="32,132,32,0" VerticalAlignment="Top" Height="190" ColumnWidth="*" CanUserResizeRows="False" CanUserAddRows="False"/>
-        <Canvas Margin="110,39,111,300">
+        <Canvas Margin="0,39,111,300" HorizontalAlignment="Right" Width="451">
             <DatePicker x:Name="dataPic" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="25" FirstDayOfWeek="Monday" SelectedDateFormat="Short" Width="175"/>
             <Label x:Name="label" Content="Wybierz datę" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Width="175"/>
             <Label x:Name="label1" Content="Wybierz tabelę" HorizontalContentAlignment="Center" Canvas.Left="275" Width="175"/>

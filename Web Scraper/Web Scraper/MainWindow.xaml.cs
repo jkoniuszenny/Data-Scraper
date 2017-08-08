@@ -80,5 +80,22 @@ namespace Web_Scraper
             
         }
 
+        private void exportExcel_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ExcelExport ee = new ExcelExport();
+
+                
+
+                //ee.takeGrid();
+                ee.CreateExcel(dataGrid, dataPic.Text, tableList.Text);
+                MessageBox.Show("I'm done. You can open file");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

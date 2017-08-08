@@ -25,6 +25,8 @@ namespace Web_Scraper
         {
             wwwAddress = "";
             tags = "";
+            htmlSource = "";
+            dataView = null;
         }
 
         //Method which set wwwAddress variable to writed address in GUI
