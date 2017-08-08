@@ -17,6 +17,7 @@ namespace Web_Scraper
         //Method which exporting data from dataGrid to Excel file
         public void CreateExcel(DataGrid dataContext, string date, string table)
         {
+
             try
             {
                 var xlApp = new Excel.Application();
@@ -25,7 +26,7 @@ namespace Web_Scraper
                 var xlWorkBook = xlApp.Workbooks.Add(misValue);
                 var xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
-                string cell;
+                string cell, path;
                 double Num;
                 int j = 0, i = 0;
 
@@ -45,7 +46,14 @@ namespace Web_Scraper
                         }
                     }
                 }
-                xlWorkBook.SaveAs(Environment.CurrentDirectory + "/" + date.Replace("-", "") + table.Substring(table.Length - 1, 1), Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+
+                path = pathExcel();
+                if (path == "")
+                {
+                    path = Environment.CurrentDirectory;
+                }
+                
+                xlWorkBook.SaveAs(path + "/" + date.Replace("-", "") + table.Substring(table.Length - 1, 1), Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
                 xlWorkBook.Close(true, misValue, misValue);
                 xlApp.Quit();
             }
@@ -53,6 +61,23 @@ namespace Web_Scraper
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public string pathExcel()
+        {
+            try
+            {
+                System.Windows.Forms.FolderBrowserDialog folderDialog = new System.Windows.Forms.FolderBrowserDialog();
+                if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    return folderDialog.SelectedPath;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return "";
         }
     }
 }
