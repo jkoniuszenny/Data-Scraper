@@ -14,6 +14,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml;
+using Forms = System.Windows.Forms;
+using Drawing = System.Drawing;
+using System.ComponentModel;
 
 namespace Web_Scraper
 {
@@ -23,11 +26,17 @@ namespace Web_Scraper
     public partial class MainWindow : Window
     {
         WebData ws = new WebData();
+        Forms.NotifyIcon ni = new Forms.NotifyIcon();
+
+        private bool isExit = false;
 
         public MainWindow()
         {
             InitializeComponent();
+            Closing += MainWindow_Closing;
+            CreateNotify();
         }
+
 
         private void startScraping_Click(object sender, RoutedEventArgs e)
         {
@@ -92,6 +101,67 @@ namespace Web_Scraper
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void CreateNotify()
+        {
+            try
+            {
+                ni.Icon = Web_Scraper.Resources.piggy;
+                ni.Visible = true;
+                ni.Text = "Double click to open";
+                ni.ShowBalloonTip(2000, "Hello", "If you want to open app just use double click", System.Windows.Forms.ToolTipIcon.None);
+                ni.DoubleClick += (s, e) => ShowMainWindow();
+                ni.ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip();
+                ni.ContextMenuStrip.Items.Add("Open program").Click += (s, e) => ShowMainWindow();
+                ni.ContextMenuStrip.Items.Add("Exit").Click += (s, e) => ExitApplication();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ExitApplication()
+        {
+            try
+            {
+                isExit = true;
+                Close();
+                ni.Dispose();
+                ni = null;
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ShowMainWindow()
+        {
+
+            if (IsVisible)
+            {
+                if (WindowState == WindowState.Minimized)
+                {
+                    WindowState = WindowState.Normal;
+                }
+                Activate();
+            }
+            else
+            {
+                Show();
+            }
+        }
+
+        private void MainWindow_Closing(object sender, CancelEventArgs e)
+        {
+            if (!isExit)
+            {
+                e.Cancel = true;
+                Hide();
             }
         }
     }

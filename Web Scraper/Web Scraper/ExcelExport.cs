@@ -15,11 +15,12 @@ namespace Web_Scraper
     class ExcelExport
     {
         //Constructor
-        public void ExcExcelExport()
+        public void excelExport()
         {
 
         }
 
+        //Method which exporting data from dataGrid to Excel file
         public void CreateExcel(DataGrid dataContext, string date, string table)
         {
             try

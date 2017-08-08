@@ -5,21 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Web_Scraper"
         mc:Ignorable="d"
-        Title="NPB Currency Scraper" Height="415" Width="680">
+        Title="NPB Currency Scraper" Height="421" MinWidth="680" Width="680" ResizeMode="NoResize" WindowStyle="ToolWindow" Icon="Resources/Pig.png">
+    <Window.Effect>
+        <DropShadowEffect ShadowDepth="15" BlurRadius="50"/>
+    </Window.Effect>
     <Grid Height="400" VerticalAlignment="Top" Margin="0,0,0,0">
-        <Button x:Name="exportExcel" Content="Export Excel file" Margin="0,0,32,36" RenderTransformOrigin="-0.08,0" HorizontalAlignment="Right" Width="103" Height="30" VerticalAlignment="Bottom" Click="exportExcel_Click"/>
-        <Button x:Name="collectData" Content="Start scraping" Margin="32,334,0,0" RenderTransformOrigin="-0.08,0" Click="startScraping_Click" Background="#FFDDDDDD" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="103"/>
-        <DataGrid x:Name="dataGrid" Margin="32,132,32,0" VerticalAlignment="Top" Height="190" ColumnWidth="*" CanUserResizeRows="False" CanUserAddRows="False"/>
-        <Canvas Margin="0,39,111,300" HorizontalAlignment="Right" Width="451">
-            <DatePicker x:Name="dataPic" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="25" FirstDayOfWeek="Monday" SelectedDateFormat="Short" Width="175"/>
-            <Label x:Name="label" Content="Wybierz datę" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Width="175"/>
-            <Label x:Name="label1" Content="Wybierz tabelę" HorizontalContentAlignment="Center" Canvas.Left="275" Width="175"/>
-            <ComboBox x:Name="tableList" Canvas.Left="275" Canvas.Top="25" Width="175" >
-                <ComboBoxItem Content="Tabela A" HorizontalAlignment="Left" Width="175" Margin="0,0,-2,0" />
-                <ComboBoxItem Content="Tabela C" HorizontalAlignment="Left" Width="175" Margin="0,0,-2,0"/>
-                <ComboBoxItem Content="Tabela H" HorizontalAlignment="Left" Width="175" RenderTransformOrigin="0.508,2.7" Margin="0,0,-2,0"/>
-            </ComboBox>
-        </Canvas>
-        <Label x:Name="tableName" Content="Pick data and table type" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="32,99,0,0" VerticalAlignment="Top" Width="608" FontSize="14"/>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="exportExcel" Content="Export Excel file" Margin="0,344,32,26" RenderTransformOrigin="-0.08,0" HorizontalAlignment="Right" Width="103" Click="exportExcel_Click">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="collectData" Content="Start scraping" Margin="32,0,0,26" RenderTransformOrigin="-0.08,0" Click="startScraping_Click" HorizontalAlignment="Left" Width="103" Height="30" VerticalAlignment="Bottom">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <DataGrid x:Name="dataGrid" Margin="32,142,32,68" ColumnWidth="*" CanUserResizeRows="False" CanUserAddRows="False" IsReadOnly="True"/>
+        <DatePicker x:Name="dataPic" VerticalAlignment="Top" FirstDayOfWeek="Monday" SelectedDateFormat="Short" Margin="73,84,0,0" HorizontalAlignment="Left" Width="175"/>
+        <Label x:Name="label" Content="Wybierz datę" HorizontalContentAlignment="Center" VerticalAlignment="Top" Margin="73,57,0,0" HorizontalAlignment="Left" Width="175"/>
+        <Label x:Name="label1" Content="Wybierz tabelę" HorizontalContentAlignment="Center" Width="175" Margin="0,57,73,317" HorizontalAlignment="Right"/>
+        <ComboBox x:Name="tableList" Width="175" Margin="0,83,73,291" HorizontalAlignment="Right" >
+            <ComboBoxItem Content="Tabela A" HorizontalAlignment="Left" Width="175" Margin="0,0,-2,0" />
+            <ComboBoxItem Content="Tabela C" HorizontalAlignment="Left" Width="175" Margin="0,0,-2,0"/>
+            <ComboBoxItem Content="Tabela H" HorizontalAlignment="Left" Width="175" RenderTransformOrigin="0.508,2.7" Margin="0,0,-2,0"/>
+        </ComboBox>
+
+        <Label x:Name="tableName" Content="Pick data and table type" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="32,109,0,0" VerticalAlignment="Top" Width="608" FontSize="14"/>
+        <Image x:Name="logo" Source="Resources/nbp.jpg" Height="48" Margin="73,4,0,0" VerticalAlignment="Top" OpacityMask="#FFFFFBFB" HorizontalAlignment="Left" Width="229"/>
+        <Label x:Name="label2" Content="Download exchange tabel" Foreground="#065552" HorizontalAlignment="Right" Margin="0,11,73,0" VerticalAlignment="Top" Height="34" Width="272" FontSize="20" FontFamily="Times New Roman" TextOptions.TextHintingMode="Animated" BorderBrush="Black" Background="{x:Null}"/>
     </Grid>
 </Window>
