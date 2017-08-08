@@ -86,9 +86,6 @@ namespace Web_Scraper
             {
                 ExcelExport ee = new ExcelExport();
 
-                
-
-                //ee.takeGrid();
                 ee.CreateExcel(dataGrid, dataPic.Text, tableList.Text);
                 MessageBox.Show("I'm done. You can open file");
             }
