@@ -62,16 +62,17 @@ namespace Web_Scraper
                 WebClient client = new WebClient();
                 Stream stream = client.OpenRead("http://www.nbp.pl/kursy/xml/dir.txt");
 
+                letter = letter.ToLower().Substring(letter.Length - 1, 1);
                 date = date.Replace("-", "").Remove(0,2);
+
                 using (StreamReader sr = new StreamReader(stream))
                 {
                     String line;
                     while ((line = sr.ReadLine()) != null)
                     {
-                        if (line.Contains(date))
+                        if (line.Contains(date) && line.Contains(letter))
                         {
-                            return letter.ToLower().Substring(letter.Length-1,1)+line.Remove(0,1);
-                            break;
+                            return letter+line.Remove(0,1);
                         }
                     }
                 }
@@ -80,7 +81,7 @@ namespace Web_Scraper
             {
                MessageBox.Show(e.Message);
             }
-            return "";
+            return "404";
         }
 
     }

@@ -31,17 +31,54 @@ namespace Web_Scraper
 
         private void startScraping_Click(object sender, RoutedEventArgs e)
         {
-            string xmlName = ws.getXmlName(dataPic.Text, tableList.Text);
+            try
+            {
 
-            ws.setAddress("http://www.nbp.pl/kursy/xml/"+xmlName+".xml");
-            dataGrid.ItemsSource = ws.readHTML();
+                if (dataPic.Text == "" || tableList.Text == "")
+                {
+                    dataGrid.ItemsSource = null;
+                    tableName.Content = "Pick data and table type";
+                    MessageBox.Show("Did you pick Date and Table type?", "Pick all data", MessageBoxButton.OK);
+                }
+                else
+                {
+                    string xmlName = ws.getXmlName(dataPic.Text, tableList.Text); 
+                    if (xmlName == "404")
+                    {
+                        dataGrid.ItemsSource = null;
+                        tableName.Content = "Pick data and table type";
+                        MessageBox.Show("This table is now unavailable. \nProbably you selected future Data or Weekend. \n\nTry later", "Error", MessageBoxButton.OK);
+                    }
+                    else
+                    {
+                        ws.setAddress("http://www.nbp.pl/kursy/xml/" + xmlName + ".xml");
+                        dataGrid.ItemsSource = ws.readHTML();
 
-            dataGrid.Columns.RemoveAt(dataGrid.Columns.Count-1);
+                        dataGrid.Columns.RemoveAt(dataGrid.Columns.Count - 1);
+
+                        switch (tableList.SelectedIndex)
+                        {
+                            case 0:
+                                tableName.Content = $"Tabela kursów średnich - tabela A z dnia {dataPic.Text}";
+                                break;
+                            case 1:
+                                tableName.Content = $"Tabela kursów kupna i sprzedaży - tabela C z dnia {dataPic.Text}";
+                                break;
+                            case 2:
+                                tableName.Content = $"Tabela kursów jednostek rozliczeniowych - tabela H z dnia {dataPic.Text}";
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
-        private void webAddress_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }
