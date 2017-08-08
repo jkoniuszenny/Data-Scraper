@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Web_Scraper"
         mc:Ignorable="d"
-        Title="NPB Currency Scraper" Height="421" MinWidth="680" Width="680" ResizeMode="NoResize" WindowStyle="ToolWindow" Icon="Resources/Pig.png">
+        Title="Web NPB Scraper" Height="421" MinWidth="680" Width="680" ResizeMode="NoResize" WindowStyle="ToolWindow" Icon="Resources/Pig.png">
     <Window.Effect>
         <DropShadowEffect ShadowDepth="15" BlurRadius="50"/>
     </Window.Effect>
