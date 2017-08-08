@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
-using System.Xml.Linq;
 using System.Windows;
 using System.Data;
 
@@ -21,7 +16,7 @@ namespace Web_Scraper
         DataView dataView { get; set; }
 
         //Constructor clearing all variables
-        public void webData()
+        public WebData()
         {
             wwwAddress = "";
             tags = "";

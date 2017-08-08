@@ -89,7 +89,7 @@ namespace Web_Scraper
             
         }
 
-        private void exportExcel_Click(object sender, RoutedEventArgs e)
+        public void exportExcel_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -104,7 +104,7 @@ namespace Web_Scraper
             }
         }
 
-        private void CreateNotify()
+        public void CreateNotify()
         {
             try
             {
@@ -123,7 +123,7 @@ namespace Web_Scraper
             }
         }
 
-        private void ExitApplication()
+        public void ExitApplication()
         {
             try
             {
@@ -139,7 +139,7 @@ namespace Web_Scraper
             }
         }
 
-        private void ShowMainWindow()
+        public void ShowMainWindow()
         {
 
             if (IsVisible)
@@ -156,7 +156,7 @@ namespace Web_Scraper
             }
         }
 
-        private void MainWindow_Closing(object sender, CancelEventArgs e)
+        public void MainWindow_Closing(object sender, CancelEventArgs e)
         {
             if (!isExit)
             {

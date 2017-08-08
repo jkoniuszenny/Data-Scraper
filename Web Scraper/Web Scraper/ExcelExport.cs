@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Diagnostics;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Data;
-using System.Collections;
 using System.Windows.Controls;
 
 namespace Web_Scraper
@@ -15,7 +9,7 @@ namespace Web_Scraper
     class ExcelExport
     {
         //Constructor
-        public void excelExport()
+        public ExcelExport()
         {
 
         }

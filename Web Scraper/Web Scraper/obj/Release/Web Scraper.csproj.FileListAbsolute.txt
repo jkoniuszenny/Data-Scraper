@@ -13,3 +13,4 @@ C:\Users\IT KON\Documents\GitHub\Data-Scraper\Web Scraper\Web Scraper\obj\Releas
 C:\Users\IT KON\Documents\GitHub\Data-Scraper\Web Scraper\Web Scraper\obj\Release\Web Scraper.pdb
 C:\Users\IT KON\Documents\GitHub\Data-Scraper\Web Scraper\Web Scraper\obj\Release\Web Scraper.csproj.ResolveComReference.cache
 C:\Users\IT KON\Documents\GitHub\Data-Scraper\Web Scraper\Web Scraper\obj\Release\Web_Scraper.Resources.resources
+C:\Users\IT KON\Documents\GitHub\Data-Scraper\Web Scraper\Web Scraper\obj\Release\Web Scraper.csprojResolveAssemblyReference.cache
